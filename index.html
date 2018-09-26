@@ -14,26 +14,25 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand">GIF Search Engine</a>
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input id="search-term" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     </nav>
 
-    <div class="jumbotron">
-            <h1 class="display-4">Seach for your favorite GIFs in the top right. They will display here</h1>
-            <hr class="my-4">
-            <p>Your search history will be displayed here</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-              <hr>
-              <a class="btn btn-danger btn-lg" href="#" role="button">Clear</a>
-            </p>
-          </div>
+<div class="jumbotron">
+    
+    <p>These are buttons of your previous searches. Here's a few to get you started!</p>
+    <div class="search-btns">
+<hr>
+    </div>
+<hr>
+    <div class = "searched-gifs">
+        <h1>Gifs will be displayed here. Search for Gifs in the top right!</h1>
+    </div>
+<hr>
+    <a class="btn btn-danger btn-lg" href="#" role="button">Clear</a>
+</div>
   
-
-
-
-
  <!-- Javascript and Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/logic.js"></script>
