@@ -2,8 +2,7 @@
 var searchArr = ["cat", "lion", "tiger"];
 
 // search function
-$("#search-btn").on("click", function () {
-
+$(document).on("click","#search-btn", function () {
     searchedItem = $("#search-term").val();
     searchArr.push(searchedItem);
     createBtn(searchArr, "btn btn-primary search-button", ".search-btns");
@@ -68,7 +67,13 @@ for (var i=0; i < 10; i++) {
     //inlcude copy link here
 
     $(".searched-gifs").append(searchDiv);
-}
+    }
 })
+});
+
+$("#clear-btn").on("click", function () {
+   $(".search-btns").empty();
+   $(".searched-gifs").empty();
+   console.log("#search-btns");
 });
 
