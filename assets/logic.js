@@ -7,6 +7,7 @@ $(document).on("click", "#search-btn", function (event) {
     searchedItem = $("#search-term").val().trim();
     searchArr.push(searchedItem);
     createBtn(searchArr, "btn btn-primary search-button", ".search-btns");
+    getGif (searchedItem);
     console.log(searchedItem);
     console.log(searchArr);
 
@@ -31,18 +32,21 @@ $(document).ready(function () {
 });
 
 $(document).on("click", ".search-button", function () {
+    var searched = $(this).attr("data-searched")
+    getGif (searched);
+});
 
+var getGif = function (searched) {
     $(".searched-gifs").empty();
-
-    var searched = $(this).attr("data-searched");
+    console.log($(this))
     console.log(this);
-    
+    console.log(searched)
     console.log("searched: " + searched); // shows undefined in console
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 
-        searched + "&apikey=6AnWVicwRJqEOwWsff57eY2nW2RyHnR9";
+    searched + "&apikey=6AnWVicwRJqEOwWsff57eY2nW2RyHnR9";
 
-    // API key & AJX call
+// API key & AJX call
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -75,7 +79,7 @@ $(document).on("click", ".search-button", function () {
         $(".searched-gifs").append(searchDiv);
         }
     })
-});
+};
 
 $(document).on("click", ".gif", function() {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
@@ -91,7 +95,6 @@ $(document).on("click", ".gif", function() {
       $(this).attr("data-state", "still");
     }
   });
-
 
 $("#clear-btn").on("click", function () {
    $(".search-btns").empty();
